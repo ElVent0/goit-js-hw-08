@@ -23,18 +23,26 @@ const parsingLocal = () => {
 };
 
 const initialForm = () => {
-  parsingLocal();
+  // parsingLocal();
   //   console.log(parsedDataFromLocalStorage);
   //   if (parsedDataFromLocalStorage.email === null) {
   //     formEl.elements.email.value = '';
   //   } else {
-  formEl.elements.email.value = parsedDataFromLocalStorage.email;
+  // formEl.elements.email.value = parsedDataFromLocalStorage.email;
   //   }
   //   if (parsedDataFromLocalStorage.message === null) {
   //     formEl.elements.message.value = '';
   //   } else {
-  formEl.elements.message.value = parsedDataFromLocalStorage.message;
+  // formEl.elements.message.value = parsedDataFromLocalStorage.message;
   //   }
+
+  const parsedDataFromLocalStorage = JSON.parse(
+    localStorage.getItem('feedback-form-state')
+  );
+  if (parsedDataFromLocalStorage) {
+    formEl.elements.email.value = parsedDataFromLocalStorage.email;
+    formEl.elements.message.value = parsedDataFromLocalStorage.message;
+  }
 };
 
 const formSubmitAction = event => {
