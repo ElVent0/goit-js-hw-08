@@ -35,7 +35,7 @@ const initialForm = () => {
   //   } else {
   // formEl.elements.message.value = parsedDataFromLocalStorage.message;
   //   }
-
+  writingModule();
   const parsedDataFromLocalStorage = JSON.parse(
     localStorage.getItem('feedback-form-state')
   );
